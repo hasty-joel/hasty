@@ -1,0 +1,255 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    background: #000;
+    align-items: center;
+}
+.nav-t{
+    position: fixed;
+    background: #000000af;
+    margin-top: 0;
+    width: 100%;
+    min-height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.nav-t a{
+    text-decoration: none;
+    color: gold;
+}
+header{
+    margin-top: 2em;
+    width: 100%;
+    min-height: 5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+header h{
+    color: white;
+    font-size: x-large;
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    align-items: center;
+    text-transform: uppercase;
+}
+header ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 50%;
+    align-items: center;
+}
+header ul li{
+    list-style: none;
+}
+header ul li:hover,header ul li a:hover{
+    font-size: large;
+    text-decoration: underline;
+    transition: .3s;
+}
+#home{
+    color: gold;
+    padding: 2px 1px;
+}
+header ul li a{
+    text-decoration:  none;
+    text-transform: uppercase;
+    color: gold;
+}
+.bubble{
+    width: auto;
+    width: 350px;
+    min-height: 30em;
+    margin: 3em 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.bubble h1{
+    text-transform: uppercase;
+    color: gold;
+    align-self: center;
+}
+.bubble input{
+    min-height: 2em;
+    width: 100%;
+    background: transparent;
+    color: gold;
+    font-size: large;
+    border: gold solid 1px;
+    border-radius: 10px;
+}
+.bubble input:hover, .bubble textarea:hover{
+    box-shadow: 0 0 10px 0 gold;
+}
+.bubble input::placeholder{
+    color: gold;
+    text-align: center;
+}
+.bubble textarea{
+    width: 100%;
+    min-height: 5em;
+    background: #000;
+    color: gold;
+    font-size: large;
+    border: gold solid 1px;
+    display: flex;
+    text-align: justify;
+    border-radius: 10px;
+}
+.bubble textarea::placeholder{
+color: gold;
+text-align: center;
+font-family: comic sans ms;
+}
+.bubble  button{
+    border: none;
+    color: gold;
+    border-radius: 10px;
+    background: rgba(255, 217, 0, 0.397);
+    max-width: 6em;
+    padding: 5px 2em;
+    font-size: large;
+   align-self: center;
+}
+.bubble button a{
+    text-decoration: none;
+    color: gold;
+}
+.bubble button:hover, .bubble button a:hover{
+ color: black;
+ background: gold;
+ transition: .3s ease-in-out;
+}
+.nav-b{
+    margin-top: 1em;
+    padding: 20px 15px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nav-b ul{
+    justify-content: space-evenly;
+    display: flex;
+    min-width: 15em;
+    height: auto;
+}
+.nav-b ul a i{
+    color: gold;
+    background: #000;
+    font-size: large;
+    padding: 6px 6px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px;
+}
+.nav-b  ul a i:hover{
+    color: #000;
+    transition: .3s;
+    background: gold;
+}
+.nav-b h{
+    font-weight: 400;
+    font-size: large;
+    padding: 10px 2px;
+    color: gold;
+    text-align: center;
+}
+.nav-b h a{
+    text-decoration: none;
+    color: gold;
+}
+.nav-b h a:hover{
+    text-decoration: underline;
+    color: white;
+    transition: .3s;
+}
+.ham-menu{
+    display: none;
+    height: 50px;
+    width: 50px;
+    margin-left: auto;
+    position: relative;
+  }
+  .ham-menu span{
+    width: 100%;
+    height: 5px;
+    background: gold;
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+  }
+  .ham-menu span:nth-child(1){
+    top: 25%;
+  }
+  .ham-menu span:nth-child(3){
+    top: 75%;
+  }
+  .ham-menu.active span:nth-child(1){
+    top: 50%;
+    transform: translate(-50%,-50%) rotate(45deg);
+  }
+  .ham-menu.ham-menu.active span:nth-child(2){
+    opacity: 0;
+  }
+  .ham-menu.ham-menu.active span:nth-child(3){
+    top: 50%;
+    transform: translate(-50%, 50%) rotate(-45deg);
+  }
+@media (max-width:420px){
+    *{
+        transition: .3s ease;
+    }
+    .nav-t{
+        flex-direction: column;
+        min-height: 4em;
+    }
+    .ham-menu{
+        display: block;
+        margin-right: auto;
+        align-self: center;
+    }
+    .header{
+        width: auto;
+        max-width: 400px;
+    }
+    header h{
+        width: auto;
+        padding: 1.5em 1em;
+    }
+    header ul{
+        display: none;
+    }
+    header ul.active{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.705);
+        border-radius: 20px;
+        border: gold solid 1px;
+        width: 8em;
+        height: 15em;
+    }
+    .bubble{
+        max-width: 340px;
+    }
+    .bubble input,.bubble textarea{
+        display: flex;
+        align-self: center;
+    }
+}
+@media (max-width:800px){
+    
+}

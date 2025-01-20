@@ -1,0 +1,256 @@
+    *{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    background: #000;
+    align-items: center;
+}
+.nav-t{
+    position: fixed;
+    background: #000000af;
+    margin-top: 0;
+    width: 100%;
+    min-height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.nav-t a{
+    text-decoration: none;
+    color: gold;
+}
+.ham-menu{
+    display: none;
+    height: 50px;
+    width: 50px;
+    margin-left: auto;
+    position: relative;
+  }
+  
+  .ham-menu span{
+    width: 100%;
+    height: 5px;
+    background: gold;
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+  }
+  .ham-menu span:nth-child(1){
+    top: 25%;
+  }
+  .ham-menu span:nth-child(3){
+    top: 75%;
+  }
+  .ham-menu.active span:nth-child(1){
+    top: 50%;
+    transform: translate(-50%,-50%) rotate(45deg);
+  }
+  .ham-menu.ham-menu.active span:nth-child(2){
+    opacity: 0;
+  }
+  .ham-menu.ham-menu.active span:nth-child(3){
+    top: 50%;
+    transform: translate(-50%, 50%) rotate(-45deg);
+  }
+header{
+    width: 100%;
+    min-height: 5em;
+    display: flex;
+    margin-top: 2em;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+header h{
+    color: white;
+    text-transform: uppercase;
+    font-size: x-large;
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    align-items: center;
+}
+header ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 50%;
+    align-items: center;
+}
+header ul li{
+    list-style: none;
+}
+header ul li:hover,header ul li a:hover{
+    font-size: large;
+    text-decoration: underline;
+    transition: .3s;
+}
+#home{
+    color: gold;
+    padding: 2px 1px;
+}
+header ul li a{
+    text-decoration:  none;
+    text-transform: uppercase;
+    color: gold;
+}
+hr{
+    width: 85%;
+}
+.barner{
+    padding: 2px 2px;
+    max-width: 930px;
+    min-height: 35em;
+    margin-top:2em;
+    margin-bottom: 5em;
+    border-radius: 20px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.barner h{
+    color: white;
+    font-size: large;
+    padding: 1em;
+}
+.barner .images{
+    width: auto;
+    min-height: 27em;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    transition: .3s ease;
+    
+}
+.images img{
+    border: solid gold 1px;
+    min-height: 11em;
+    border-radius: 10px;
+    max-width: 220px;
+}
+.images img:hover{
+    box-shadow: 0 0 10px white;
+    transition: .3s ease-out;
+}
+.barner button{
+    background: rgba(255, 217, 0, 0.568);
+    border-radius: 10px;
+    border: none;
+    width: auto;
+    max-width: 10em;
+    padding: 2px 2em;
+    align-self: center;
+    margin: 2em 1px;
+}
+.barner button a{
+    color: gold;
+    text-decoration: none;
+    font-size: large;
+    font-weight: 500;
+}
+.barner button a:hover, .barner button:hover{
+    background: gold;
+    color: black;
+    transition: .3s ease-in-out;
+    font-weight: 600;
+}
+.nav-b{
+    margin-top: 1em;
+    padding: 20px 15px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nav-b ul{
+    justify-content: space-evenly;
+    display: flex;
+    min-width: 15em;
+    height: auto;
+}
+.nav-b ul a i{
+    color: gold;
+    background: #000;
+    font-size: large;
+    padding: 6px 6px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px;
+}
+.nav-b  ul a i:hover{
+    color: #000;
+    transition: .3s;
+    background: gold;
+}
+.nav-b h{
+    font-weight: 400;
+    font-size: large;
+    padding: 10px 2px;
+    color: gold;
+    text-align: center;
+}
+.nav-b h a{
+    text-decoration: none;
+    color: gold;
+}
+.nav-b h a:hover{
+    text-decoration: underline;
+    color: white;
+    transition: .3s;
+}
+@media (max-width:420px){
+    *{
+        transition: .3s ease;
+    }
+    .nav-t{
+        flex-direction: column;
+        min-height: 4em;
+    }
+    .ham-menu{
+        display: block;
+        margin-right: auto;
+        align-self: center;
+    }
+    .header{
+        width: auto;
+        max-width: 400px;
+    }
+    header h{
+        width: auto;
+        padding: 1.5em 1em;
+    }
+    header ul{
+        display: none;
+    }
+    header ul.active{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.705);
+        border-radius: 20px;
+        border: gold solid 1px;
+        width: 8em;
+        height: 15em;
+    }
+    .barner{
+        max-width: 300px;
+    }
+    .barner h{
+        padding: 1em;
+    }
+    .barner{
+        width: auto;
+        max-width: 500px;
+        align-items: center;
+    }
+    .images{
+        max-width: 220px;
+    }
+}
